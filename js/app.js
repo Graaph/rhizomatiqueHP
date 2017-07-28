@@ -9,8 +9,14 @@ $(document).ready(function(){
 
 });
 
+
+
+
 var resizeListener = function(){
 	var canvas = document.getElementById("defaultCanvas0");
   	canvas.style.width = '100%';
     canvas.style.height = '100%';  
 }
+
+
+

@@ -8,13 +8,15 @@ var Nx;
 var Ny;
 var orientations;
 
+var initTime;
+var frameCounter = 0;
+
 function setup() {
 
 	var initWindowWidth = 1920; // windowWidth;
 	var initWindowHeight = 1080; // windowHeight;
-	setFrameRateByBPM(111.0)
+	setFrameRateByBPM(60.0)
 	createCanvas(initWindowWidth, initWindowHeight);
-	frameRate(24);
 
 	logo0 = loadImage("img/logo0.png");
 	logo1 = loadImage("img/logo1.png");
@@ -41,13 +43,16 @@ function setup() {
 		}
 	} 
 
-	// TODO: better resize handling
 	// resize for the first time
 	resizeListener()
-
+	initTime = performance.now()
 }
 
 function draw() {
+	var t0 = performance.now();
+
+	
+
 	background("#07051b");
 
 	for (var i=0; i < Ny; i++) {
@@ -57,4 +62,16 @@ function draw() {
 			image(imgArray[orientations[j][i]], -100 + j*dx + is_odd*xshift, -100 + i*dy);
 		}
 	}	
+
+
+
+	frameCounter += 1;
+
+
+	var t1 = performance.now();
+	//console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+	console.log("frameRate : " +   frameCounter*1000 / (t1 - initTime)   )
+	//console.log("run for : " +    (t1 - initTime)   )
+	//console.log("Frames : " +   frameCounter  )
+
 }

@@ -1,10 +1,13 @@
 function setFrameRateByBPM(bpm){
 
-	changesPerSecond = bpm / 60.0 
+	changesPerSecond = bpm / 60.0; 
 
-	console.log(changesPerSecond)
+	changes8tel = changesPerSecond * 2;
+	changes16tel = changesPerSecond * 4;
 
-	//frameRate(changesPerSecond)	
+	console.log(changes16tel)
+
+	frameRate(changes16tel)	
 }
 
 
