@@ -34,4 +34,5 @@ MainCanvas.prototype.getCanvasHeight = function() {
 MainCanvas.prototype.getCanvasWidth = function() {
 	return this.initCanvasWidth
 };
+
 var mC = new MainCanvas({});

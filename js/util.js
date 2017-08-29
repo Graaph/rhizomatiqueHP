@@ -5,13 +5,23 @@ function setFrameRateByBPM(bpm){
 	changes8tel = changesPerSecond * 2;
 	changes16tel = changesPerSecond * 4;
 
-	console.log(changes16tel)
+	console.log("changes16tel",changes16tel)
 
 	frameRate(changes16tel)	
 }
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
+
+
+
+
+
+
+// ----------------------------------------------------------------
 
 
 function square(){

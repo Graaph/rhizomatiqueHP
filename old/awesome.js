@@ -53,7 +53,7 @@ function draw() {
 
 	
 
-	background("#07051b");
+	background("#000");
 
 	for (var i=0; i < Ny; i++) {
 		for (var j=0; j < Nx; j++) {
@@ -70,7 +70,7 @@ function draw() {
 
 	var t1 = performance.now();
 	//console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
-	console.log("frameRate : " +   frameCounter*1000 / (t1 - initTime)   )
+	//console.log("frameRate : " +   frameCounter*1000 / (t1 - initTime)   )
 	//console.log("run for : " +    (t1 - initTime)   )
 	//console.log("Frames : " +   frameCounter  )
 
