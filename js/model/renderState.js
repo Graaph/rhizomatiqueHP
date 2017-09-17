@@ -24,6 +24,7 @@ RenderState.prototype.addChangedPixel = function(newX,newY,opt){
 	this.changedPixels.push({x: newX,y : newY})
 
 	if ("orientation" in opt){
+		console.log(opt)
 		this.orientations[newX][newY] = opt.orientation
 	}
 

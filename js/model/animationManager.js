@@ -1,8 +1,16 @@
 var animationManager = function(){
 	console.log("init am")
-    this.animations = [new rndWalk(),new rndWalk(),new rndWalk(),new rndWalk()]
+    this.animations = [
+    	new rndWalk({"direction" : 1}),
+        new rndWalk({"direction" : 3,"length" : 1}),
+        new rndWalk({"direction" : 3,"length" : 1}),
+        new rndWalk({"direction" : 3,"length" : 1}),
+        new rndWalk({"direction" : 3,"length" : 1}),
+        new rndWalk({"direction" : 3}),
+        new rndWalk(),
+        new rndWalk(),
+    ];
 	console.log(this.animations);
-
 	return this;
 }
 
