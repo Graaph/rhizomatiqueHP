@@ -40,3 +40,5 @@ MainCanvas.prototype.getCanvasWidth = function() {
 var mC = new MainCanvas({});
 
 var gitter = new Gitter(mC.Nx,mC.Ny);
+
+var colorLib = ColorLib();

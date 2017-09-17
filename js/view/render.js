@@ -1,7 +1,7 @@
 var Renderer = {
 
     setup : function(){
-    	setFrameRateByBPM(121.0)
+    	setFrameRateByBPM(80.0 *10)
     	console.log("setup shit")
 
 		createCanvas(mC.getCanvasWidth(), mC.getCanvasHeight() );

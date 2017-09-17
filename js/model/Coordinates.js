@@ -2,6 +2,9 @@ function Gitter(Nx,Ny){
     this.Nx = Nx;
     this.Ny = Ny;
 
+    console.log("init Coordinates");
+    console.log(Nx,Ny)
+
     this.neighbors_even = [[0,2], [-1,1], [-1,-1], [0,-2], [0,-1], [0,1]];
     this.neighbors_odd = [[0,2], [0,1], [0,-1], [0,-2], [1,-1], [1,1]];
 }

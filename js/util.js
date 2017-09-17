@@ -21,19 +21,12 @@ function getRandomInt(min, max) {
 
 
 
-
 // ----------------------------------------------------------------
 
 
 function square(){
 	return 
 }
-
-
-
-
-
-
 
 
 
