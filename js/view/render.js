@@ -21,17 +21,15 @@ var Renderer = {
 
 	draw : function(){
 
-		//background("#07051b");
-
 		for (pix in rS.changedPixels){
-
 			this.drawRhizom(rS.changedPixels[pix].x,rS.changedPixels[pix].y)
 		}
 
-		rS.update()
-		console.log("Frames : " +   frameRate()  )
+		rS.update();
 
-
+		if (cfg.showFrameRate){
+    		console.log("Frames : " +   frameRate()  )
+        }
 	},
 
 	firstDraw : function(){
@@ -52,6 +50,13 @@ var Renderer = {
 		image(this.getImg( rS.orientation(x,y) ), 
 				-100 + x*mC.dx + is_odd*mC.xshift, 
 				-100 + y*mC.dy);
+
+		if (cfg.showXYNames){
+		    fill(255, 255, 255);
+            text(str(x) + " | " + str(y),
+                -100 + x*mC.dx + is_odd*mC.xshift,
+				-100 + y*mC.dy)
+        }
 	},
 
 	changeColor : function(x,y){
