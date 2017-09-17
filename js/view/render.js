@@ -1,7 +1,7 @@
 var Renderer = {
 
     setup : function(){
-    	setFrameRateByBPM(60.0)
+    	setFrameRateByBPM(121.0)
     	console.log("setup shit")
 
 		createCanvas(mC.getCanvasWidth(), mC.getCanvasHeight() );
@@ -16,15 +16,12 @@ var Renderer = {
 		];
 
     	background("#07051b");
-    	this.initDraw = true;
+    	this.initDrawDone = false;
 	},
 
 	draw : function(){
-		if (this.initDraw) {
-			this.firstDraw();
-		}
 
-		background("#07051b");
+		//background("#07051b");
 
 		for (pix in rS.changedPixels){
 
@@ -32,27 +29,29 @@ var Renderer = {
 		}
 
 		rS.update()
+		console.log("Frames : " +   frameRate()  )
+
 
 	},
 
 	firstDraw : function(){
+		console.log(rS.colors)
 		for (var i=0; i < mC.Ny; i++) {
 			for (var j=0; j < mC.Nx; j++) {
-				this.drawRhizom(i,j);
+				this.drawRhizom(j,i);
 			}
 		}
-		initDraw = false;
 
 		resizeListener()
 	},
 
 	drawRhizom:  function(x,y){
-		this.changeColor(y,x)
+		this.changeColor(x,y)
 
-		is_odd = x % 2;
-		image(this.getImg( rS.orientation(y,x) ), 
-				-100 + y*mC.dx + is_odd*mC.xshift, 
-				-100 + x*mC.dy);
+		is_odd = y % 2;
+		image(this.getImg( rS.orientation(x,y) ), 
+				-100 + x*mC.dx + is_odd*mC.xshift, 
+				-100 + y*mC.dy);
 	},
 
 	changeColor : function(x,y){
@@ -77,5 +76,10 @@ function setup () {
 // p5 draw function
 function draw(){
 	aM.draw()
-	Renderer.draw()
+	if (!Renderer.initDrawDone) {
+		Renderer.firstDraw()
+		Renderer.initDrawDone = true
+	} else {
+		Renderer.draw()
+	}
 }

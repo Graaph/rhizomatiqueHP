@@ -2,6 +2,7 @@ function setFrameRateByBPM(bpm){
 
 	changesPerSecond = bpm / 60.0; 
 
+
 	changes8tel = changesPerSecond * 2;
 	changes16tel = changesPerSecond * 4;
 
@@ -11,7 +12,7 @@ function setFrameRateByBPM(bpm){
 }
 
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 0.5)) + min;
 }
 
 

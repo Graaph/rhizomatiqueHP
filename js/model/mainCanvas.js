@@ -23,8 +23,10 @@ function MainCanvas(cfg = {}) {
 	this.dy = this.logoHeight/2 + this.margin;
 	this.xshift = this.dx/2;
 
-	this.Nx = parseInt(this.initCanvasWidth/this.logoWidth + 2);
-	this.Ny = parseInt(this.initCanvasHeight/(this.logoHeight/2) + 2);
+	this.Nx = parseInt(this.initCanvasWidth/this.dx + 2);
+	this.Ny = parseInt(this.initCanvasHeight/(this.dy) + 2);
+	console.log("Nx " + this.Nx)
+	console.log("Ny " + this.Ny)
 }
 
 MainCanvas.prototype.getCanvasHeight = function() {
