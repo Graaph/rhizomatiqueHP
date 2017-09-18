@@ -1,7 +1,7 @@
 var Renderer = {
 
     setup : function(){
-    	setFrameRateByBPM(121.0 *10*2)
+    	setFrameRateByBPM(121.0)
     	console.log("setup shit")
 
 		createCanvas(mC.getCanvasWidth(), mC.getCanvasHeight() );
@@ -77,6 +77,7 @@ function setup () {
 	console.log(aM)
 	aM.setup()
 
+    noLoop()
 }
 // p5 draw function
 function draw(){

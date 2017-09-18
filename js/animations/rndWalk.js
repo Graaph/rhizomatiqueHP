@@ -1,7 +1,6 @@
 var rndWalk = function (opt) {
    if (opt === undefined){
 	    opt = {};
-	    console.log("undefinded")
     }
 
 	if ("length" in opt)
