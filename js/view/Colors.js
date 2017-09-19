@@ -12,11 +12,16 @@ ColorLib.prototype.rndColor = function(baseColor,bias) {
         ]
     }
 
-    return retColor = [
-        getRandomInt(baseColor[0] - bias,(baseColor[0] + 2* bias) % 255 ),
-        getRandomInt(baseColor[1] - bias,(baseColor[1] + 2* bias) % 255 ),
-        getRandomInt(baseColor[2] - bias,(baseColor[2] + 2* bias) % 255 )
+    console.log(baseColor[0] - bias,(baseColor[0] + bias) % 255, getRandomInt(baseColor[0] - bias,(baseColor[0] + bias) % 255 ) );
+
+    var retColor = [
+        getRandomInt( baseColor[0] - bias ,(baseColor[0] + bias) % 255 ),
+        getRandomInt( baseColor[1] - bias ,(baseColor[1] + bias) % 255 ),
+        getRandomInt( baseColor[2] - bias ,(baseColor[2] + bias) % 255 )
     ]
+    console.log(retColor);
+
+    return retColor;
 };
 
 var colorLib = new ColorLib();

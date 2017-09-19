@@ -1,7 +1,7 @@
 var Renderer = {
 
     setup : function(){
-    	setFrameRateByBPM(121.0)
+    	setFrameRateByBPM(79.0*16)
     	console.log("setup shit")
 
 		createCanvas(mC.getCanvasWidth(), mC.getCanvasHeight() );
@@ -65,27 +65,5 @@ var Renderer = {
 
 	getImg : function(imgNr){
 		return this.imgArray[imgNr]
-	}
-}
- 
-
-
-// p5 setup funktion
-function setup () {
-	Renderer.setup()
-
-	console.log(aM)
-	aM.setup()
-
-    noLoop()
-}
-// p5 draw function
-function draw(){
-	aM.draw()
-	if (!Renderer.initDrawDone) {
-		Renderer.firstDraw()
-		Renderer.initDrawDone = true
-	} else {
-		Renderer.draw()
 	}
 }

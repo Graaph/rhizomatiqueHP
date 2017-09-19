@@ -1,29 +1,19 @@
 var animationManager = function(){
-	console.log("init am")
-    this.animations = [
-    	new rndWalk({"direction" : 1}),
-        new rndWalk({"direction" : 1,"length" : 1}),
-        new rndWalk({"direction" : 1,"length" : 1}),
-        new rndWalk({"direction" : 1,"length" : 1}),
-        new rndWalk({"direction" : 1,"length" : 1}),
-        new rndWalk({"direction" : 1}),
-        new rndWalk({"direction" : 1}),
-        new rndWalk({"direction" : 1}),
-        new rndWalk({"direction" : 1}),
-		new rndWalk(),
-    ];
-	console.log(this.animations);
+    this.animations = [];
 	return this;
-}
+};
 
 animationManager.prototype.addAnimation = function(anim) {
-	this.animations.push(anim);
+    this.animations.push(anim);
+};
+
+animationManager.prototype.flushAnimations = function(){
+    this.animations = [];
 };
 
 animationManager.prototype.setup = function(){
-    console.log("AM Setup")
+
     for (i in this.animations){
-    	console.log("setup animation:",i)
 		this.animations[i].setup()
 	}
 }

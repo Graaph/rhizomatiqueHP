@@ -1,12 +1,14 @@
 var rndWalk = function (opt) {
+
    if (opt === undefined){
 	    opt = {};
     }
 
-	if ("length" in opt)
-	    { this.length = opt.length; }
-    else
-        { this. length = 2; }
+	if ("length" in opt){
+       this.length = opt.length;
+    } else {
+	    this. length = 2;
+	}
 
     if ("direction" in opt){
 	    this.direction = opt.direction
@@ -17,14 +19,28 @@ var rndWalk = function (opt) {
     if ("orientation" in opt){
         this.orientation = opt.orientation;
     }
+
+    if (opt.hasOwnProperty("color")){
+        this.actColor = opt.color;
+    } else {
+        this.actColor = this.getRNDColor()
+    }
+
+    if (opt.hasOwnProperty("rndColor")){
+        this.rndColor = opt.rndColor;
+    } else {
+        this.rndColor = false;
+    }
+
+    if (opt.hasOwnProperty("rndBias")){
+        this.rndBias = opt.rndBias;
+    } else {
+        this.rndBias = 0;
+    }
 };
 
 rndWalk.prototype.setup = function() {
-
-	this.actColor = this.getRNDColor();
 	this.Points = [this.addRandomPoint()];
-
-
 };
 
 rndWalk.prototype.draw = function() {
@@ -34,9 +50,9 @@ rndWalk.prototype.draw = function() {
         this.Points.shift();
     }
 
-    if (frameCount%this.length == 0){
-        var newColor = colorLib.rndColor(nextPoint.opt.color,2)
-        nextPoint.opt.color = newColor
+    if (frameCount%this.length == 0 && this.rndColor){
+        var nextColor = colorLib.rndColor(nextPoint.opt.color,this.rndBias);
+        nextPoint.opt.color = nextColor;
     }
 
     this.Points.push(nextPoint);
