@@ -6,7 +6,7 @@ function MainCanvas(cfg = {}) {
 	}
 
 	var defaultCfg = {
-		"margin"			: 4,
+		"margin"			: 3,
 		"logoHeight"		: 65, 
 		"logoWidth"			: 81,	
 		"initCanvasWidth"	: 1920,
@@ -24,7 +24,7 @@ function MainCanvas(cfg = {}) {
 	this.xshift = this.dx/2;
 
 	this.Nx = parseInt(this.initCanvasWidth/this.dx + 2);
-	this.Ny = parseInt(this.initCanvasHeight/(this.dy) + 2);
+	this.Ny = parseInt(this.initCanvasHeight/this.dy + 4);
 	console.log("Nx " + this.Nx)
 	console.log("Ny " + this.Ny)
 }

@@ -28,7 +28,6 @@ RenderState.prototype.addChangedPixel = function(newX,newY,opt){
 	}
 
 	if ("color" in opt){
-		console.log(opt.color)
 		this.colors[newX][newY] = opt.color
 	}
 }

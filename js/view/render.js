@@ -20,10 +20,12 @@ var Renderer = {
 	},
 
 	draw : function(){
+    	//background("#07051b");
 
 		for (pix in rS.changedPixels){
 			this.drawRhizom(rS.changedPixels[pix].x,rS.changedPixels[pix].y)
 		}
+
 
 		rS.update();
 

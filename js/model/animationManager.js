@@ -23,9 +23,10 @@ animationManager.prototype.draw = function(){
 	for (i in this.animations){
 		retVal = this.animations[i].draw();
 
-		_.map(retVal, function(value,key){
-			rS.addChangedPixel(value.x,value.y,value.opt)
-		})
+		for (i in retVal){
+			rS.addChangedPixel(retVal[i].x,retVal[i].y,retVal[i].opt)
+		}
+
 	}
 }
 

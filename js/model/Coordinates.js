@@ -14,8 +14,12 @@ Gitter.prototype.add_vectors = function (a,b) {
 	if (a.length != b.length) { return 0; }
 	var result = [];
 	for (var i = 0; i < a.length; i++) {
+		console.log(a)
+		console.log(b)
+		console.log(a[i] + b[i])
 		result.push(a[i] + b[i]);
 	}
+	console.log(result);
 	return result;
 };
 
@@ -35,6 +39,7 @@ Gitter.prototype.periodic_boundary = function (a){
 
 
 Gitter.prototype.getAllNeighbors = function(x,y) {
+	console.log("1111111111111111111", x,y)
 	is_odd = y % 2;
 	var curr_neigh;
 	var neighborList = [];
@@ -42,14 +47,22 @@ Gitter.prototype.getAllNeighbors = function(x,y) {
 	if (is_odd) {
 		for (var i=0; i<6; i++) {
 			curr_neigh = this.add_vectors([x, y], this.neighbors_odd[i]);
+			console.log(curr_neigh);
+
 			curr_neigh = this.periodic_boundary(curr_neigh);
 			neighborList.push(curr_neigh);
+			console.log(curr_neigh);
 		}
 	} else {
 		for (var i=0; i<6; i++) {
+			console.log(this.neighbors_even[i]);
 			curr_neigh = this.add_vectors([x, y], this.neighbors_even[i]);
+						console.log(curr_neigh);
+
 			curr_neigh = this.periodic_boundary(curr_neigh);
 			neighborList.push(curr_neigh);
+						console.log(curr_neigh);
+
 		}
 	}
 

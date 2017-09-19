@@ -1,13 +1,13 @@
 var rndWalk = function (opt) {
 
-   if (opt === undefined){
+    if (opt === undefined){
 	    opt = {};
     }
 
 	if ("length" in opt){
        this.length = opt.length;
     } else {
-	    this. length = 2;
+	    this. length = 15;
 	}
 
     if ("direction" in opt){
@@ -20,7 +20,7 @@ var rndWalk = function (opt) {
         this.orientation = opt.orientation;
     }
 
-    if (opt.hasOwnProperty("color")){
+    if (opt.hasOwnProperty("color") & !(opt.color === "rnd") ){
         this.actColor = opt.color;
     } else {
         this.actColor = this.getRNDColor()
@@ -37,39 +37,76 @@ var rndWalk = function (opt) {
     } else {
         this.rndBias = 0;
     }
+
+    console.log("---------------");
+    console.log(this);
+    this.Points = []
+    console.log(this);
 };
 
 rndWalk.prototype.setup = function() {
-	this.Points = [this.addRandomPoint()];
+    console.log("setup rndWalk")
+
+    this.Points = [];
+
+    console.log("this.Points",this.Points);
+    console.log(this);
+    var startPoint = 	this.addRandomPoint();
+    console.log(this);
+    this.Points.push(startPoint);
+	//this.Points.push(startPoint);
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    console.log("this.Points",this.Points)
+
+
 };
 
 rndWalk.prototype.draw = function() {
     var nextPoint = this.findNextPoint();
 
+    console.log("*************************************")
+    console.log(nextPoint)
+
+       console.log("*************************************")
+
+
     if (this.Points.length > this.length){
-        this.Points.shift();
+        //this.Points.shift();
     }
 
-    if (frameCount%this.length == 0 && this.rndColor){
-        var nextColor = colorLib.rndColor(nextPoint.opt.color,this.rndBias);
-        nextPoint.opt.color = nextColor;
+    if (frameCount%this.length === 0 && this.rndColor){
+        nextPoint.opt.color = colorLib.rndColor(nextPoint.opt.color,this.rndBias);
     }
 
+    console.log("-----------------------------------")
+    console.log(this.Points)
     this.Points.push(nextPoint);
+        console.log(this.Points)
+
+    console.log("===============================")
+
+    console.log(this.Points.length);
+    console.log(this.Points)
 
     return this.Points
 };
 
 
 rndWalk.prototype.findNextPoint = function(){
+    console.log(this.Points[this.Points.length -1])
     var lastPoint = this.Points[this.Points.length -1];
+    console.log(lastPoint)
+
 
     var allPosition = gitter.getAllNeighbors(lastPoint.x, lastPoint.y);
-    if (this.direction == "random"){
-        var newPosition = allPosition[getRandomInt(0,5)];
+    console.log(allPosition);
+    var newPosition = 0;
+    if (this.direction === "random"){
+         newPosition = allPosition[getRandomInt(1,5)];
     } else {
-        var newPosition = allPosition[this.direction];
+         newPosition = allPosition[this.direction];
     }
+    console.log(newPosition)
     lastPoint.x = newPosition[0];
     lastPoint.y = newPosition[1];
 
@@ -80,15 +117,23 @@ rndWalk.prototype.findNextPoint = function(){
         lastPoint.opt.orientation = this.orientation;
     }
 
+    console.log(lastPoint)
     return lastPoint;
 };
 
 rndWalk.prototype.addRandomPoint = function() {
+    var newX = getRandomInt(0, 14);
+    var newY = getRandomInt(0, 31);
 
-    return {
-        x: getRandomInt(0, 14), y: getRandomInt(0, 31),
-        opt: {color: this.actColor}
+    var randomPoint =  {
+        x: newX,
+        y: newY,
+        opt: {
+            color: this.actColor
+        }
     };
+
+    return randomPoint;
 }
 
 rndWalk.prototype.getRNDColor = function () {
