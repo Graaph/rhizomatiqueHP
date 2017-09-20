@@ -1,7 +1,7 @@
 var Renderer = {
 
     setup : function(){
-    	setFrameRateByBPM(79.0*16)
+    	setFrameRateByBPM(130.0)
     	console.log("setup shit")
 
 		createCanvas(mC.getCanvasWidth(), mC.getCanvasHeight() );
@@ -20,7 +20,8 @@ var Renderer = {
 	},
 
 	draw : function(){
-    	//background("#07051b");
+
+    	background("#07051b");
 
 		for (pix in rS.changedPixels){
 			this.drawRhizom(rS.changedPixels[pix].x,rS.changedPixels[pix].y)
