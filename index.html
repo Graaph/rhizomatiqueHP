@@ -5,7 +5,7 @@
 
 	<script type="text/javascript" src="js/external/p5.js"></script>
 	<script type="text/javascript" src="js/external/underscore.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
 	<script type="text/javascript" src="https://w.soundcloud.com/player/api.js" ></script>
 
 	<script type="text/javascript" src="js/config.js"></script>
@@ -16,18 +16,21 @@
 
 	<script type="text/javascript" src="js/app.js"></script>
 
-    <script type="text/javascript" src="js/model/score.js"></script>
-
-	<script type="text/javascript" src="js/animations/animation.js"></script>
-	<script type="text/javascript" src="js/animations/rndWalk.js"></script>
-
-    <script type="text/javascript" src="js/Scores/wirgarten.js"></script>
-
 	<script type="text/javascript" src="js/model/mainCanvas.js"></script>
 	<script type="text/javascript" src="js/model/animationManager.js"></script>
 	<script type="text/javascript" src="js/model/renderState.js"></script>
+    <script type="text/javascript" src="js/model/score.js"></script>
+    <script type="text/javascript" src="js/view/render.js"></script>
 
-	<script type="text/javascript" src="js/view/render.js"></script>
+	<script type="text/javascript" src="js/animations/animation.js"></script>
+	<script type="text/javascript" src="js/animations/rndWalk.js"></script>
+	<script type="text/javascript" src="js/animations/rndPoints.js"></script>
+	<script type="text/javascript" src="js/animations/strobo.js"></script>
+	<script type="text/javascript" src="js/animations/circleLooper.js"></script>
+	<script type="text/javascript" src="js/animations/logo.js"></script>
+
+    <script type="text/javascript" src="js/Scores/wirgarten.js"></script>
+    <script type="text/javascript" src="js/Scores/song01.js"></script>
 
     <script type="text/javascript" src="js/view/loop.js"></script>
 
@@ -36,11 +39,17 @@
 <body>
 
 	<div id="page">
+				<img src="img/singold.JPG" id="backPic">
+
 		<h1></h1>
+
 		
 		<img src="img/play.png" class="playing-image play-symbol">
-		
 	</div>
+
+<audio controls style="display: none" id="html-audio-playa">
+  <source  src="audio/song01.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 </html>

@@ -3,13 +3,19 @@ var score = new Score();
 // p5 setup funktion
 function setup () {
 	Renderer.setup();
-	score.setup(wirgarten);
+	score.setup(song01);
     aM.setup()
 
     noLoop()
 }
 // p5 draw function
 function draw(){
+
+
+
+
+	score.update(frameCount);
+
 	aM.draw()
 
 	if (!Renderer.initDrawDone) {
@@ -18,7 +24,7 @@ function draw(){
         Renderer.initDrawDone = true
 	}
 
-	score.update(frameCount);
+
 	Renderer.draw()
 
 }

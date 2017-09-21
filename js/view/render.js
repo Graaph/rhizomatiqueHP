@@ -1,8 +1,8 @@
 var Renderer = {
 
     setup : function(){
-    	setFrameRateByBPM(130.0)
-    	console.log("setup shit")
+    	setFrameRateByBPM(120.0 * 4);
+    	console.log("setup shit");
 
 		createCanvas(mC.getCanvasWidth(), mC.getCanvasHeight() );
 
@@ -15,13 +15,19 @@ var Renderer = {
 			loadImage("img/logo5.png"),
 		];
 
-    	background("#07051b");
+    	//background("#07051b");
     	this.initDrawDone = false;
 	},
 
 	draw : function(){
 
-    	background("#07051b");
+    	//background("#07051b");
+
+		//background("#ffffff");
+
+		// background('rgba(255,255,255, 1.0)');
+
+		 background('rgba(7, 5, 27, 0.1)');
 
 		for (pix in rS.changedPixels){
 			this.drawRhizom(rS.changedPixels[pix].x,rS.changedPixels[pix].y)
@@ -33,6 +39,9 @@ var Renderer = {
 		if (cfg.showFrameRate){
     		console.log("Frames : " +   frameRate()  )
         }
+
+        fill(255, 255, 255);
+		text(str(frameCount),10,10)
 	},
 
 	firstDraw : function(){
@@ -63,7 +72,8 @@ var Renderer = {
 	},
 
 	changeColor : function(x,y){
-		tint(rS.colors[x][y])
+		var c = rS.colors[x][y];
+		tint(c[0],c[1],c[1],255)
 	},
 
 	getImg : function(imgNr){

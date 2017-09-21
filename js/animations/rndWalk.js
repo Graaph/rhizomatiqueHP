@@ -38,23 +38,19 @@ var rndWalk = function (opt) {
         this.rndBias = 0;
     }
 
-    console.log("---------------");
-    console.log(this);
-    this.Points = []
-    console.log(this);
+
 };
 
 rndWalk.prototype.setup = function() {
     console.log("setup rndWalk")
 
-    this.Points = [];
+    this.Points = new Array();
+    console.log("this.Points",this.Points)
 
-    console.log("this.Points",this.Points);
-    console.log(this);
     var startPoint = 	this.addRandomPoint();
-    console.log(this);
+        console.log(startPoint)
+
     this.Points.push(startPoint);
-	//this.Points.push(startPoint);
     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     console.log("this.Points",this.Points)
 

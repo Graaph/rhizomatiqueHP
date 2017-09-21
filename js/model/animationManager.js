@@ -21,12 +21,11 @@ animationManager.prototype.setup = function(){
 animationManager.prototype.draw = function(){
 
 	for (i in this.animations){
-		retVal = this.animations[i].draw();
+		var retVal = this.animations[i].draw();
 
-		for (i in retVal){
-			rS.addChangedPixel(retVal[i].x,retVal[i].y,retVal[i].opt)
-		}
-
+		_.each(retVal,function (elemt,index,list) {
+            rS.addChangedPixel(elemt.x,elemt.y,elemt.opt)
+        })
 	}
 }
 

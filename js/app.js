@@ -11,12 +11,15 @@ $(document).ready(function(){
 
             if ($(this).hasClass("play-symbol")){
                 loop();
+                document.getElementById('html-audio-playa').play();
 
                 $(this).attr('src','img/pause.png')
                     .removeClass("play-symbol")
                     .addClass("pause-symbol");
             } else {
                 noLoop()
+                document.getElementById('html-audio-playa').pause();
+
 
                 $(this).attr('src','img/play.png')
                     .removeClass("pause-symbol")
