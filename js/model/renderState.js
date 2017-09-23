@@ -1,15 +1,20 @@
 function RenderState(){
-	this.orientations = new Array(mC.Nx).fill(new Array(mC.Ny).fill(0));
-	for (var i=0; i < mC.Ny; i++) {
-		for (var j=0; j < mC.Nx; j++) {
-			this.orientations[j][i] = parseInt(6*Math.random());
+
+	this.orientations = new Array(mC.Nx).fill(
+	    new Array(mC.Ny).fill(0));
+
+	for (var y=0; y < mC.Ny; y++) {
+		for (var x=0; x < mC.Nx; x++) {
+			this.orientations[x][y] = parseInt( getRandomInt(0,5) );
 		}
 	}
 
-	this.colors = new Array(mC.Nx).fill(new Array(mC.Ny).fill(0));
-	for (var i=0; i < mC.Ny; i++) {
-		for (var j=0; j < mC.Nx; j++) {
-			this.colors[j][i] = [0,0,0]
+	this.colors = new Array(mC.Nx).fill(
+	    new Array(mC.Ny).fill(0));
+
+	for (var y=0; y < mC.Ny; y++) {
+		for (var x=0; x < mC.Nx; x++) {
+			this.colors[x][y] = [0,0,0]
 		}
 	}
 

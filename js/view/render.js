@@ -45,7 +45,6 @@ var Renderer = {
 	},
 
 	firstDraw : function(){
-		console.log(rS.colors)
 		for (var i=0; i < mC.Ny; i++) {
 			for (var j=0; j < mC.Nx; j++) {
 				this.drawRhizom(j,i);

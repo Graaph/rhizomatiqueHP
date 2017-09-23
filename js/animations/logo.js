@@ -33,14 +33,16 @@ logo.prototype.setupPoints = function () {
      var Orientation  = [1,2,3,4,5,0];
 
        for (pos in allPosition) {
-           console.log({
-               x: allPosition[pos][0],
-               y: allPosition[pos][1],
-               opt: {
-                   "color" : this.midlePoint.opt.color,
-                   "orientation" : Orientation[pos],
-               }
-           });
+           if (cfg.showXYNames) {
+               console.log({
+                   x: allPosition[pos][0],
+                   y: allPosition[pos][1],
+                   opt: {
+                       "color": this.midlePoint.opt.color,
+                       "orientation": Orientation[pos],
+                   }
+               });
+           }
            this.Points.push({
                x: allPosition[pos][0],
                y: allPosition[pos][1],
