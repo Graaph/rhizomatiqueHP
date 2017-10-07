@@ -45,25 +45,17 @@ rndWalk.prototype.setup = function() {
     console.log("setup rndWalk")
 
     this.Points = new Array();
-    console.log("this.Points",this.Points)
 
     var startPoint = 	this.addRandomPoint();
-        console.log(startPoint)
 
     this.Points.push(startPoint);
-    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    console.log("this.Points",this.Points)
+
 
 
 };
 
 rndWalk.prototype.draw = function() {
     var nextPoint = this.findNextPoint();
-
-    console.log("*************************************")
-    console.log(nextPoint)
-
-       console.log("*************************************")
 
 
     if (this.Points.length > this.length){
@@ -74,35 +66,24 @@ rndWalk.prototype.draw = function() {
         nextPoint.opt.color = colorLib.rndColor(nextPoint.opt.color,this.rndBias);
     }
 
-    console.log("-----------------------------------")
-    console.log(this.Points)
     this.Points.push(nextPoint);
-        console.log(this.Points)
 
-    console.log("===============================")
-
-    console.log(this.Points.length);
-    console.log(this.Points)
 
     return this.Points
 };
 
 
 rndWalk.prototype.findNextPoint = function(){
-    console.log(this.Points[this.Points.length -1])
     var lastPoint = this.Points[this.Points.length -1];
-    console.log(lastPoint)
 
 
     var allPosition = gitter.getAllNeighbors(lastPoint.x, lastPoint.y);
-    console.log(allPosition);
     var newPosition = 0;
     if (this.direction === "random"){
          newPosition = allPosition[getRandomInt(1,5)];
     } else {
          newPosition = allPosition[this.direction];
     }
-    console.log(newPosition)
     lastPoint.x = newPosition[0];
     lastPoint.y = newPosition[1];
 
@@ -113,7 +94,6 @@ rndWalk.prototype.findNextPoint = function(){
         lastPoint.opt.orientation = this.orientation;
     }
 
-    console.log(lastPoint)
     return lastPoint;
 };
 
@@ -136,4 +116,17 @@ rndWalk.prototype.getRNDColor = function () {
     return [getRandomInt(0,250),
             getRandomInt(0,250),
             getRandomInt(0,250)]
+};
+
+
+rndWalk.prototype.setColorR = function(r){
+	this.actColor[0] = r;
+};
+
+rndWalk.prototype.setColorG = function(g){
+	this.actColor[1] = g;
+};
+
+rndWalk.prototype.setColorB = function(b){
+	this.actColor[2] = b;
 };

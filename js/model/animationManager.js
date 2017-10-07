@@ -5,6 +5,8 @@ var animationManager = function(){
 
 animationManager.prototype.addAnimation = function(anim) {
     this.animations.push(anim);
+
+    console.log("addAnimation")
 };
 
 animationManager.prototype.flushAnimations = function(){
@@ -12,6 +14,8 @@ animationManager.prototype.flushAnimations = function(){
 };
 
 animationManager.prototype.setup = function(){
+
+	console.log("setup AM - animationcount: " + this.animations.length)
 
     for (i in this.animations){
 		this.animations[i].setup()

@@ -7,6 +7,8 @@ Score.prototype.setup = function (timeline) {
 
     this.sektionPointer = 0;
     this.roundsLeft = this.timeline[0].length * this.timeline[0].loops;
+
+    this.loadSektion()
 };
 
 Score.prototype.update = function (framesPast) {

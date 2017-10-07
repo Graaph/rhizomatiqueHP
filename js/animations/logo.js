@@ -2,21 +2,13 @@ var logo= function (opt) {};
 
 logo.prototype.setup = function(initPos, initColor) {
     this.midlePoint = this.addRandomPoint();
-    this.period = 2
+    this.period = 2;
     this.pol = true;
 
     this.setupPoints();
 };
 
 logo.prototype.draw = function() {
-
-
-   /*if (frameCount%this.period === 0){
-       this.pol = !this.pol;
-   }
-   if (this.pol){
-
-   }*/
 
    return this.Points;
 
@@ -30,7 +22,7 @@ logo.prototype.setupPoints = function () {
 
 
      var allPosition = gitter.getAllNeighbors(this.midlePoint.x, this.midlePoint.y);
-     var Orientation  = [1,2,3,4,5,0];
+     var Orientation  = [0,1,2,3,4,5];
 
        for (pos in allPosition) {
            if (cfg.showXYNames) {
