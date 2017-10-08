@@ -57,6 +57,7 @@ class Animation{
 
     setLength(length) {
         this.length = length;
+        console.log("set length ", this.length)
     };
 
 	// sets up all important shit
