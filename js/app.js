@@ -1,6 +1,13 @@
 $(document).ready(function(){
 
-	console.log("initialisiation")
+	console.log("initialisiation");
+
+  /*  $(document).mousemove(function(event){
+        const hexX = parseInt(event.pageX / $('body').width() * (mC.Nx -1)) ;
+        const hexY = parseInt(event.pageY / $('body').height() * (mC.Ny -1)) ;
+        song01[0].animations[0].pos = [hexX,hexY]
+    });*/
+
 
     // Enable WebMidi.js
 WebMidi.enable(function (err) {

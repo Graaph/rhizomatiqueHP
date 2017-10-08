@@ -21,17 +21,15 @@ class Animation{
         this.Points = [];
     }
 
-    addPoint(newPoint){
-	    this.Points.push(newPoint);
-    }
-
-    removePoint(position){
-        this.Points.splice(position, 1);
-    }
-
-    removeLastPoint(position){
-        this.Points.pop();
-    }
+    getRNDPoint(){
+		return {
+			x : getRandomInt(0,14),
+			y : getRandomInt(0,31),
+			opt: {
+				color : colorLib.rndColor(this.color,this.rndBias)
+			},
+		};
+	};
 
     loadConfiguration(initCfg){
         if(typeof(initCfg) === 'object'){
@@ -44,6 +42,22 @@ class Animation{
             this[key] = this.defaultCfg[key]
         }
     }
+
+    setColorR(r){
+	    this.color[0] = r;
+    };
+
+    setColorG(g){
+	    this.color[1] = g;
+    };
+
+    setColorB(b){
+	    this.color[2] = b;
+    };
+
+    setLength(length) {
+        this.length = length;
+    };
 
 	// sets up all important shit
 	setup(){

@@ -25,7 +25,7 @@ var song01 = [
         length : 10000 ,
         loops : 1,
         animations : [
-            new Point([5,5]),
+            new rndPoints()
 
 
         ]
