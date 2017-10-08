@@ -61,7 +61,7 @@ class rndWalk extends  Animation {
 			}
 		}
 
-		if (frameCount % this.length === 0 && this.rndColor){
+		if (frameCount % 2 === 0 && this.rndColor){
             //nextPoint.opt.color = colorLib.rndColor(nextPoint.opt.color,this.rndBias);
             this.color = colorLib.rndColor(nextPoint.opt.color,this.rndBias)
         }

@@ -25,23 +25,9 @@ var song01 = [
         length : 10000 ,
         loops : 1,
         animations : [
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
-            new rndWalk({direction : 2, rndColor: true,rndBias: 15 }),
+            new rndWalk({direction : 2}),
+
+
 
 
 

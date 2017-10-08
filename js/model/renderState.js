@@ -26,7 +26,19 @@ RenderState.prototype.update = function(){
 }
 
 RenderState.prototype.addChangedPixel = function(newX,newY,opt){
-	this.changedPixels.push({x: newX,y : newY})
+
+	let pixelIndex = 0;
+	// chek if already pushed Pixel
+	for (let i in this.changedPixels){
+		if ( this.changedPixels[i].x === newX && this.changedPixels[i].y === newY) {
+			pixelIndex = i;
+			break
+		}
+	}
+
+	if (pixelIndex === 0){
+		this.changedPixels.push({x: newX,y : newY})
+	}
 
 	if ("orientation" in opt){
 		this.orientations[newX][newY] = opt.orientation
