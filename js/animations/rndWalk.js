@@ -4,9 +4,10 @@ class rndWalk extends  Animation {
     constructor(opt) {
         super();
 
-        if (opt === undefined) {
+        opt = opt ? opt : {};
+        /*if (opt === undefined) {
             opt = {};
-        }
+        }*/
 
         if ("length" in opt) {
             this.length = opt.length;

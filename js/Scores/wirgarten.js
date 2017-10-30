@@ -1,21 +1,3 @@
-var nachUnten = function(length,color,rndColor,rndBias){
-
-    var tmp = new rndWalk({
-        //"length" : length,
-        "direction" : 2,
-        "color" : color,
-        "rndColor" : rndColor,
-        "rndBias" : rndBias,
-
-    })
-
-    return tmp
-
-};
-
-var punkte = function () {
-    return new rndPoints()
-}
 
 var wirgarten = [
     new Sektion({

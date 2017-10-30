@@ -1,11 +1,25 @@
-var logo= function (opt) {};
+"use strict";
+
+class logo extends  Animation{
+    constructor(){
+        super();
+    }
+
+    setup(){
+        this.midlePoint = this.addRandomPoint();
+        this.period = 2;
+        this.pol = true;
+
+        this.setupPoints();
+    };
+
+    draw(){
+    }
+}
+
 
 logo.prototype.setup = function(initPos, initColor) {
-    this.midlePoint = this.addRandomPoint();
-    this.period = 2;
-    this.pol = true;
 
-    this.setupPoints();
 };
 
 logo.prototype.draw = function() {
@@ -52,8 +66,8 @@ logo.prototype.addRandomPoint = function(){
 				opt: {
 					color : [
 						getRandomInt(0,255),
-                        getRandomInt(0,255),
-                        getRandomInt(0,255)],
+            getRandomInt(0,255),
+            getRandomInt(0,255)],
 				},
 			};
 };
