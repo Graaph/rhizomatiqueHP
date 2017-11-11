@@ -25,9 +25,9 @@ var Renderer = {
 
 		//background("#ffffff");
 
-		background('rgba(255,255,255, 0.11)');
+		//background('rgba(255,255,255, 0.11)');
 
-		 //background('rgba(0, 0, 0, 1)');
+		 background('rgba(0, 0, 0, 0.001)');
 
 		for (pix in rS.changedPixels){
 			this.drawRhizom(rS.changedPixels[pix].x,rS.changedPixels[pix].y)

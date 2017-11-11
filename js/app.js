@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 
     // Enable WebMidi.js
-WebMidi.enable(function (err) {
+/*WebMidi.enable(function (err) {
 
   if (err) {
     console.log("WebMidi could not be enabled.", err);
@@ -29,7 +29,7 @@ WebMidi.enable(function (err) {
   console.log(input);
 
   // Listen for a 'note on' message on all channels
-  input.addListener('noteon', "all",
+    input.addListener('noteon', "all",
     function (e) {
       console.log("Received 'noteon' message (" + e.note.name + e.note.octave + ").");
     }
@@ -59,7 +59,7 @@ WebMidi.enable(function (err) {
     }
   );
 
-});
+});*/
 
 	$( window ).resize(function() {
   		resizeListener()

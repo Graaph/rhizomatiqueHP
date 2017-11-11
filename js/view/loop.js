@@ -3,7 +3,7 @@ var score = new Score();
 // p5 setup funktion
 function setup () {
     aM.setup();
-    score.setup(song01);
+    score.setup(song02);
     Renderer.setup();
 
     noLoop()

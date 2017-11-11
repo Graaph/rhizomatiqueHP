@@ -1,6 +1,6 @@
 let song02 = [
 
-    punkte(32,8),
+    //punkte(32,8),
 
     rndWalker(64,1),
 
