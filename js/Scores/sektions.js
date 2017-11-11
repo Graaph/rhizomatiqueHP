@@ -1,5 +1,5 @@
 
-let oneDirection = function (sektionLen,lineCount,lineLen,direction,color,rndColor,rndBias) {
+let oneDirection = function (direction,sektionLen,lineCount,lineLen,color,rndColor,rndBias) {
 
     let animation = [];
     for(let i = 1;i <= lineCount;i++){

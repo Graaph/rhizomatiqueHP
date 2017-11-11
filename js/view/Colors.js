@@ -7,7 +7,7 @@ var ColorLib = function() {
 ColorLib.prototype.rndColor = function(baseColor,bias) {
 
     if ( !baseColor){
-        return retColor = [
+        return [
             getRandomInt(0,255),
             getRandomInt(0,255),
             getRandomInt(0,255)
