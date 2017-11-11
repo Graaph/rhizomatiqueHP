@@ -19,6 +19,18 @@ body {margin:0;padding:0}
 	width: 70%;
 }
 
+#menu{
+	display: block;
+	position: fixed;
+
+	top: 0px;
+
+	height: 100%;
+	width: 20%;
+	margin-left: 80%;
+	background-color: wheat;
+}
+
 .playing-image{
 	display: block;
 	margin-left: auto;
