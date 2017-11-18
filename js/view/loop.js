@@ -6,7 +6,8 @@ function setup () {
     score.setup(refSong);
     Renderer.setup();
 
-    noLoop()
+    //noLoop()
+    resizeListener();
 }
 // p5 draw function
 function draw(){
