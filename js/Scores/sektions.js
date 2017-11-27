@@ -49,3 +49,14 @@ let punkte = function (sektionLen,lineCount) {
         animations : animation
     })
 };
+
+let rz_logo = function (len) {
+    return new Sektion({
+        length : len ,
+        loops : 1,
+        animations : [
+            new logo(),
+        ]
+
+    })
+};
