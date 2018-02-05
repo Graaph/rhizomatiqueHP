@@ -15,4 +15,21 @@ function draw(){
 
 	aM.draw();
 	Renderer.draw()
+    if (cfg.save2disk) {
+        CaptureScreen()
+    }
+
+}
+
+var canvas = document.getElementById("defaultCanvas0");
+
+function CaptureScreen() {
+    console.log("Capture Sreen")
+    frameCount++;
+
+
+    // draw to canvas...
+  /*  canvas.toBlob(function(blob) {
+        saveAs(blob, frameCount+".png");
+    });*/
 }

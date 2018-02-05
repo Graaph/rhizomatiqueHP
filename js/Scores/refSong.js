@@ -1,12 +1,18 @@
-const lineLen = 128;
-const rndBias = 1;
-const aniLen = 8;
+const lineLen = 64;
+const rndBias = 0;
+const aniLen = 128;
 
 let refSong = [
 
-    //punkte(32,8),
-    rz_logo(64),
-    rndWalker(32,1),
+    ////rz_logo(500),
+    rndWalker(13,5),
+    //rndWalker(15,4),
+    //rndWalker(18,5),
+
+    //oneDirection(4,aniLen,lineLen,1,colorLib.rndColor(),true,rndBias),
+    //rndWalker(128,1),
+    //oneDirection(2,aniLen,lineLen,1,colorLib.rndColor(),true,rndBias),
+    //rndWalker(128,4),
 
 
     //oneDirection(direction,sektionLen,lineLen,lineLen,color,rndColor,rndBias)

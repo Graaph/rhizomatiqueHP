@@ -25,28 +25,29 @@ class logo extends  Animation{
 
 
          var allPosition = gitter.getAllNeighbors(this.midlePoint.x, this.midlePoint.y);
-         var Orientation  = [0,1,2,3,4,5];
+         console.log(allPosition)
+         var Orientation  = [0,0,0,0,0,0];
 
            for (let pos in allPosition) {
-               if (cfg.showXYNames) {
-                   console.log({
-                       x: allPosition[pos][0],
-                       y: allPosition[pos][1],
-                       opt: {
-                           "color": this.midlePoint.opt.color,
-                           "orientation": Orientation[pos],
-                       }
-                   });
-               }
+               console.log(Orientation[pos])
                this.Points.push({
                    x: allPosition[pos][0],
                    y: allPosition[pos][1],
                    opt: {
-                       "color" : this.midlePoint.opt.color,
-                       "orientation" : Orientation[pos],
+                       "color" : [
+                           0,
+                           pos == 4 ? 200:0,
+                           0],
+                       "orientation" : pos,
                    }
+
                })
            }
+           for (let p in this.Points){
+               console.log(this.Points[p].x,this.Points[p].y,this.Points[p].opt.color[0])
+           }
+
+           console.log(this.Points)
 
     }
 
