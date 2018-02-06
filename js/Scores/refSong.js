@@ -5,7 +5,7 @@ const aniLen = 128;
 let refSong = [
 
     ////rz_logo(500),
-    rndWalker(13,5),
+    rndWalker(300,5),
     //rndWalker(15,4),
     //rndWalker(18,5),
 

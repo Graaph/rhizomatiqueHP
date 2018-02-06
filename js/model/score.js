@@ -13,7 +13,7 @@ Score.prototype.setup = function (timeline) {
 
 Score.prototype.update = function (framesPast) {
     if (framesPast % this.roundsLeft == 0){
-        console.log("cahnging Scene");
+        //console.log("cahnging Scene");
         clear();
 
         this.sektionPointer = (this.sektionPointer + 1) % this.timeline.length;

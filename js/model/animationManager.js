@@ -5,8 +5,8 @@ var animationManager = function(){
 
 animationManager.prototype.addAnimation = function(anim) {
     this.animations.push(anim);
-
-    console.log("addAnimation")
+	//TODO: log level 2
+    //console.log("addAnimation")
 };
 
 animationManager.prototype.flushAnimations = function(){

@@ -26,11 +26,16 @@ var Renderer = {
 		//background("#ffffff");
 
 		//background('rgba(20,20,20, 0.31)');
-		backgroundColor[0] += (frameCount % 4 === 0)? 1 :0;
-		if (backgroundColor[0] % 64 === 0){
-			backgroundColor[0] = 0;
-		}
-		//background('rgba('+backgroundColor[0]+','+backgroundColor[0]+','+backgroundColor[0]+', 0.11)');
+		// backgroundColor[0] += (frameCount % 4 === 0)? 1 :0;
+		// if (backgroundColor[0] % 64 === 0){
+		// 	backgroundColor[0] = 0;
+		// }
+
+		const backgroundColorAsString = 'rgba('+backgroundColor[0]+','+backgroundColor[1]+','+backgroundColor[2]+','+backgroundAlpha+')';
+
+
+		//console.log(backgroundColorAsString)
+		background(backgroundColorAsString);
 
 		 //background('rgba(1, 1, 1, 0 	)');
 

@@ -24,7 +24,8 @@ function draw(){
 var canvas = document.getElementById("defaultCanvas0");
 
 function CaptureScreen() {
-    console.log("Capture Sreen")
+    //TODO: log level 2
+    //console.log("Capture Sreen")
     frameCount++;
 
 
